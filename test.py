@@ -1,9 +1,11 @@
 import unittest
-
-from main import add
+import requests
 
 class MainTest(unittest.TestCase):
     def test_add(self):
-        x = add(5, 5)
+        r = requests.get("http://127.0.0.1:5000/test")
 
-        self.assertEquals(x, 10)
+        self.assertEqual(r.text, "Test!")
+
+if __name__ == "__main__":
+    unittest.main()
