@@ -34,7 +34,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run flask servert
       run: |
-        screen -S python -m flask run
+        nohup python -m flask run
     - name: Test with unittest
       run: |
         python -m unittest
